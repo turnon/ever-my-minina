@@ -2,7 +2,7 @@ version: '3'
 services:
 
   ever-to-md:
-    image: "daocloud.io/shutdown/ever-go-md:latest"
+    image: "daocloud.io/shutdown/ever-go-md:v0.1.1"
     environment:
       - GOOS=windows
     volumes:
@@ -10,7 +10,7 @@ services:
       - tmp:/to
 
   md-to-web:
-    image: "mymm:latest"
+    image: "daocloud.io/shutdown/my-minina:v0.1.1"
     depends_on: ["ever-to-md"]
     volumes:
       - tmp:/from
